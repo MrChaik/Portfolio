@@ -110,8 +110,12 @@ section {
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
-  height: 80vh;
-  padding:5rem;
+  height: 20vh;
+  padding: 5rem 5rem 0 0;
+}
+#svgProfile{
+ margin-top: -10rem;
+ color:linear-gradient(45deg, blue, red);
 }
 #passport{
   object-fit: cover;
@@ -191,13 +195,18 @@ section {
 
 #about {
   position: relative;
+  height: 50vh;
+  margin: 0 0 10rem 0;
+  padding: 0;
 }
+svg
 
 .experience-details-container > .about-containers{
   display: flex;
   padding: 2rem 0;
   gap: 5rem;
-  justify-content: center;
+  padding: 0 5rem;
+  justify-content: space;
   flex-direction: column; /* Center the about containers */
 }
 
@@ -271,9 +280,6 @@ section {
   animation: float 10s ease-in-out infinite alternate, rotate 12s linear infinite;
 }
 
-
-
-
 #profile > .section__pic-container >#section__pic-container-sec{
   border-radius: 25%;
   width: 400px;
@@ -285,7 +291,11 @@ section {
 /* EXPERIENCE SECTION */
 #experience {
   position: relative;
+  background: linear-gradient(to bottom,#00cba9, transparent);
+  margin: 0;
+  padding: 0 10rem;
 }
+
 
 .experience-sub-title {
   color: rgb(85, 85, 85);
@@ -326,16 +336,20 @@ section {
 #projects > .experience-details-container > .about-containers{
   display: flex;
   flex-direction: row;
+  gap: 5rem;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   padding: 0px 2rem;
+
 
 }
 .details-container.color-container
 {
   background-color: black;
   width: 400px;
-  height: 400px;
+  height: fit-content;
+  padding: 1rem;
 }
 .color-container {
   border-color: rgb(163, 163, 163);

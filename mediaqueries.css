@@ -65,7 +65,10 @@
   }
   .about-containers {
     margin-top: 0;
+    display: flex;
     justify-content: center; 
+    align-items: row;
+ 
     /* Center the about containers */
   }
   /* Ensure About and Experience are on top */
