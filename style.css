@@ -5,30 +5,17 @@
 * {
   margin: 0;
   padding: 0;
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: "Poppins", sans-serif;
   background-color: blue;
   background: linear-gradient(45deg, blue, red);
-
   overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
-html {
-  scroll-behavior: smooth;
-}
-#section__pic-container-sec{
-  border: 2px solid black;
-  border-radius: 50%;
-  scale:1.2;
-  object-fit: contain;
-}
-#passport{
-  border: 2px solid black;
-  border-radius: 50%;
-}
 .Header-NavBar {
   background-color: black;
   height: 100px;
@@ -70,7 +57,11 @@ nav {
 .nav-links {
   gap: 2rem;
   list-style: none;
-  font-size: 1.5rem;
+  font-size: 1.5rem; 
+}
+.nav-links > li > a{
+  margin: 0 1rem;
+  color: white;
 }
 
 a {
@@ -107,7 +98,9 @@ section {
 .section-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 4rem;
 }
 
 /* PROFILE SECTION */
@@ -120,12 +113,12 @@ section {
   height: 80vh;
   padding:5rem;
 }
-.section__pic-container {
-  display: flex;
-  height: 400px;
-  width: 400px;
-  margin: auto 0;
-}
+#passport{
+  object-fit: cover;
+  border: 2px solid black;
+  border-radius: 50%;
+  background-color: bisque;
+}   
 .section__text {
   align-self: center;
   text-align: center;
@@ -189,7 +182,9 @@ section {
   cursor: pointer;
   background: rgb(0, 0, 0);
   color: white;
+  width: 9.7rem;
   border: rgb(255, 255, 255) 0.1rem solid;
+  letter-spacing: 3px;
 }
 
 /* ABOUT SECTION */
@@ -198,20 +193,24 @@ section {
   position: relative;
 }
 
-.about-containers {
+.experience-details-container > .about-containers{
   display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
-  justify-content: center; /* Center the about containers */
+  padding: 2rem 0;
+  gap: 5rem;
+  justify-content: center;
+  flex-direction: column; /* Center the about containers */
 }
 
 .about-details-container {
   display: flex;
+  padding: 2rem 0;
   justify-content: center;
+  align-items: space-between;
   flex-direction: column;
+  flex-wrap: nowrap; /* Ensure no wrapping *
+ /* Ensure the container is wide enough */
 }
+
 
 .about-pic {
   border-radius: 2rem;
@@ -224,34 +223,68 @@ section {
 }
 
 .details-container {
-  padding: 1.5rem;
+  padding: 0.5rem;
   flex: 1;
   background: white;
   border-radius: 2rem;
   border: rgb(53, 53, 53) 0.1rem solid;
   border-color: rgb(163, 163, 163);
   text-align: center;
+  margin-bottom: 1rem;
+  
 }
 
-.section-container {
-  gap: 40rem;
-  height: 80%;
+.details-containers
+{  
+  padding: 2rem;
+  flex: 1;
+  background: white;
+  border-radius: 2rem;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(163, 163, 163);
+  text-align: center;
+  margin-bottom: 1rem;
+  max-height: fit-content;
+  max-width: content-box;
 }
-.section__pic-container-sec{
-  height: 400px;
-  width: 40px;
 
-;}
 
 .section__pic-container {
   height: 400px;
-  width: 40px;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+}
+
+#section__pic-container-sec{
+  border-radius: 50%;
+  width: 400px;
+}
+
+#profile > .section__pic-container {
+  width: 600px;
+  height: 600px;
+}
+#profile > .section__pic-container > .background-svg{
+  position: absolute;
+  width: 38rem;
+  animation: float 10s ease-in-out infinite alternate, rotate 12s linear infinite;
+}
+
+
+
+
+#profile > .section__pic-container >#section__pic-container-sec{
+  border-radius: 25%;
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  top: 33%;
 }
 
 /* EXPERIENCE SECTION */
 #experience {
   position: relative;
-  margin-bottom: 30vh;
 }
 
 .experience-sub-title {
@@ -276,22 +309,34 @@ section {
   justify-content: space-around;
 }
 
-article {
-  display: flex;
-  width: 10rem;
-  justify-content: space-around;
-}
-
-article .icon {
-  cursor: default;
-}
-
 /* PROJECTS SECTION */
 
 #projects {
   position: relative;
+  background: #0099ff;
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(to bottom, #0099ff, transparent);
 }
 
+#projects > .experience-details-container > .about-containers{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 2rem;
+
+}
+.details-container.color-container
+{
+  background-color: black;
+  width: 400px;
+  height: 400px;
+}
 .color-container {
   border-color: rgb(163, 163, 163);
   background: rgb(250, 250, 250);
@@ -316,10 +361,14 @@ article .icon {
 /* CONTACT SECTION */
 
 #contact {
+  width: 100%;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  height: 70vh;
+  height: 20vh;
+  margin: 0;
+  padding: 10% 0 0 0 ;
+  background: linear-gradient(to bottom, #3278dc, transparent);
 }
 
 .contact-info-upper-container {
@@ -355,11 +404,26 @@ article .icon {
 
 /* FOOTER SECTION */
 
+svg,
 footer {
-  height: 26vh;
-  margin: 0 1rem;
+  margin: 0;
+  padding: 0;
 }
 
-footer p {
+svg {
+  display: block; /* Removes any extra whitespace around inline SVG */
+  width: 100%; /* Makes the SVG responsive */
+  margin-bottom: -5px; /* Adjust this as needed to close any visible gaps */
+}
+
+footer {
+  padding: 0 0 1em 0;
+  background-color: #000b76; /* Optional: Adds a background color for footer */
   text-align: center;
+}
+
+
+footer p {
+  text-align: center; 
+  color: aliceblue;
 }
