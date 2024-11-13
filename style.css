@@ -198,6 +198,7 @@ section {
   height: 50vh;
   margin: 0 0 10rem 0;
   padding: 0;
+  background: linear-gradient(to bottom,#00CBA9, transparent);
 }
 svg
 
@@ -331,6 +332,9 @@ svg
   flex-direction: column;
   justify-content: center;
   background: linear-gradient(to bottom, #0099ff, transparent);
+}
+#project-2{
+  padding:3rem 0 3rem 0;
 }
 
 #projects > .experience-details-container > .about-containers{
