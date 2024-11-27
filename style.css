@@ -333,8 +333,8 @@ svg
   justify-content: center;
   background: linear-gradient(to bottom, #0099ff, transparent);
 }
-#project-2{
-  padding:3rem 0 3rem 0;
+#project-1{
+  padding:1rem 0 3rem 0;
 }
 
 #projects > .experience-details-container > .about-containers{
